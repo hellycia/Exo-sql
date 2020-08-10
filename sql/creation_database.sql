@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS exercice;
+CREATE DATABASE exercice;
