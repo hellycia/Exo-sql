@@ -1,13 +1,9 @@
-INSERT INTO users (first_name, last_name, age, civil)
-VALUES ('Jean', 'Moulin', 1, 'Homme');
-INSERT INTO users (first_name, last_name, age, civil)
-VALUES ('Marine', 'Gautier', 10, 'Femme');
-INSERT INTO users (first_name, last_name, age, civil)
-VALUES ('Carine', 'Tellier', 100, 'Femme');
-INSERT INTO users (first_name, last_name, age, civil)
-VALUES ('Marc', 'Jolier', 1000, 'Homme');
-INSERT INTO users (first_name, last_name, age, civil)
-VALUES ('Didier', 'Riou', 1234567890, 'Homme');
+INSERT INTO user (first_name, last_name, age, civil) VALUES
+('Jean', 'Moulin', 1, 'Homme'),
+('Marine', 'Gautier', 10, 'Femme'),
+('Carine', 'Tellier', 100, 'Femme'),
+('Marc', 'Jolier', 1000, 'Homme'),
+('Didier', 'Riou', 1234567890, 'Homme');
 
 INSERT INTO products (price, title)
 VALUES (29.99, 'chapeau');
