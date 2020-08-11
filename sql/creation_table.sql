@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `order` (
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     user_id int NOT NULL,
     date datetime NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 );
 
 
@@ -27,5 +27,5 @@ CREATE TABLE IF NOT EXISTS order_line (
     price float NOT NULL,
     quantity int NOT NULL,
     FOREIGN KEY (order_id) REFERENCES `order`(id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+    FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
 );
