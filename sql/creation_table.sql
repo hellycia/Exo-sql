@@ -1,35 +1,31 @@
-DROP TABLE IF EXISTS order_line;
-DROP TABLE IF EXISTS `order`;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS products;
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS user (
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    first_name varchar(255),
-    last_name varchar(255),
-    age int(1),
-    civil varchar(255)
+    first_name varchar(255) NOT NULL,
+    last_name varchar(255) NOT NULL,
+    age int(1) NOT NULL,
+    civil varchar(255) NOT NULL
     );
 
-CREATE TABLE products (
+CREATE TABLE IF NOT EXISTS product (
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    price float,
-    title varchar(255)
+    price float NOT NULL,
+    title varchar(255) NOT NULL
     );
 
 
-CREATE TABLE `order` (
+CREATE TABLE IF NOT EXISTS `order` (
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    user_id int,
-    date datetime,
+    user_id int NOT NULL,
+    date datetime NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
     );
 
 
-CREATE TABLE order_line (
-    order_id int,
-    product_id int,
-    price float,
-    quantity int,
+CREATE TABLE IF NOT EXISTS order_line (
+    order_id int NOT NULL,
+    product_id int NOT NULL,
+    price float NOT NULL,
+    quantity int NOT NULL,
     FOREIGN KEY (order_id) REFERENCES `order`(id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
     );
